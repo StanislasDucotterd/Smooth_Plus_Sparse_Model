@@ -1,0 +1,89 @@
+MRI acc_8_cf_0.04 - PD
+
+TV
+lambda=0.00644196
+
+DRUNet
+sigma=129.684 and lambda=0.01146255054005839
+
+Prox-DRUNet
+sigma=13.6313 and lambda=0.840896
+
+CPR
+beta=0.480868 and lambda=0.000272627
+
+NCPR
+beta=0.0189763 and lambda=0.0013139
+
+--------------------------------------------------
+
+MRI acc_8_cf_0.04 - PDFS
+
+TV
+lambda=0.00672717
+
+DRUNet
+sigma=118.921 and lambda=1.2337686603263525
+
+Prox-DRUNet
+sigma=12.5 and lambda=0.840896
+
+CPR
+beta=0.155902 and lambda=0.00025
+
+NCPR
+beta=0.011783 and lambda=0.00110485
+
+--------------------------------------------------
+
+MRI acc_16_cf_0.02 - PD
+
+TV
+lambda=0.00565686
+
+DRUNet
+sigma=336.359 and lambda=0.08052451659746271
+
+Prox-DRUNet
+sigma=21.0224 and lambda=0.738413
+
+CPR
+beta=0.311805 and lambda=0.00025
+
+NCPR
+beta=0.000515129 and lambda=0.000602426
+
+--------------------------------------------------
+
+MRI acc_16_cf_0.02 - PDFS
+
+TV
+lambda=0.0059073
+
+DRUNet
+sigma=400.0 and lambda=0.19152065613971475
+
+Prox-DRUNet
+Sigma: 25 and Lambda: 1.61049
+
+CPR
+beta=0.440958 and lambda=0.00025
+
+NCPR
+beta=0.015 and lambda=0.001
+
+--------------------------------------------------
+
+Super Resolution
+
+TV
+Lambda: 0.000310464
+
+CPR
+beta=0.0389756 and lambda=5.2556e-05
+
+WCPR
+beta=0.00258673 and lambda=0.000929068
+
+DRUNet 
+sigma=36.9207 and lambda=0.17562521603732997
