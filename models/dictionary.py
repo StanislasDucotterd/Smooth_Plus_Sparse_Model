@@ -14,7 +14,6 @@ class Dictionary(nn.Module):
         self.nb_atoms = dict_params['nb_atoms']
         self.nb_free_atoms = dict_params['nb_free_atoms']
         self.atom_size = dict_params['atom_size']
-        self.tol = dict_params['tol']
         self.atoms = nn.Parameter(torch.randn(self.nb_atoms, 1, self.atom_size, self.atom_size) / 3000)
         self.free_atoms = nn.Parameter(torch.randn(self.nb_free_atoms, 1, self.atom_size, self.atom_size) / 3000)
         self.beta = nn.Parameter(torch.tensor(dict_params['beta_init']))
@@ -26,6 +25,7 @@ class Dictionary(nn.Module):
 
         self.b_solver = dict_params['b_solver']
         self.b_max_iter = dict_params['b_max_iter']
+        self.tol = dict_params['tol']
 
     def forward(self, y):
 

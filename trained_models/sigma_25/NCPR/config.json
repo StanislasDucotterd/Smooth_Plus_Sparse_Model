@@ -1,0 +1,30 @@
+{
+    "dict_params": {
+        "atom_size": 13,
+        "b_max_iter": 50,
+        "b_solver": "broyden",
+        "beta_init": 2.0,
+        "nb_atoms": 200,
+        "nb_free_atoms": 120,
+        "tol": 0.0001
+    },
+    "exp_name": "NCPR",
+    "log_dir": "trained_models/sigma_25",
+    "prox_params": {
+        "groupsize": 1,
+        "lambda_init": 0.0125,
+        "order": 1.8,
+        "prox_type": "l0norm"
+    },
+    "sigma": 25,
+    "training_options": {
+        "batch_size": 16,
+        "epochs": 1,
+        "lr_atoms": 0.0002,
+        "lr_decay": 0.9,
+        "lr_hyper": 0.001,
+        "num_workers": 1,
+        "train_data_file": "/home/ducotter/nerf_dip/images/train.h5",
+        "val_data_file": "/home/ducotter/nerf_dip/images/val.h5"
+    }
+}

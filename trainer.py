@@ -4,9 +4,9 @@ import json
 from tqdm import tqdm
 from torch.utils.data import DataLoader
 from torch.utils import tensorboard
-from dataloader.BSD500 import BSD500
+from BSD500 import BSD500
 from models.dictionary import Dictionary
-from utils import utilities
+from utilities import batch_PSNR, batch_SSIM
 
 class TrainerDictionnary:
     """
@@ -35,7 +35,7 @@ class TrainerDictionnary:
         
         self.epochs = config["training_options"]['epochs']
         params = [{'params': [self.model.atoms, self.model.free_atoms], 'lr': config['training_options']['lr_atoms']}, \
-                  {'params': [self.model.prox.parameters(), self.model.beta], 'lr': config['training_options']['lr_hyper']}]
+                  {'params': list(self.model.prox.parameters()) + [self.model.beta], 'lr': config['training_options']['lr_hyper']}]
 
         self.optimizer = torch.optim.Adam(params)
         self.scheduler = torch.optim.lr_scheduler.ExponentialLR(self.optimizer, gamma=config['training_options']['lr_decay'])
@@ -44,7 +44,7 @@ class TrainerDictionnary:
         # CHECKPOINTS & TENSOBOARD
         run_name = config['exp_name']
         print('Run name: ', run_name)
-        self.checkpoint_dir = os.path.join(config['log_dir'], config["exp_name"], 'checkpoints')
+        self.checkpoint_dir = os.path.join(config['log_dir'], config["exp_name"])
         if not os.path.exists(self.checkpoint_dir):
             os.makedirs(self.checkpoint_dir)
         config_save_path = os.path.join(config['log_dir'], config["exp_name"], 'config.json')
@@ -112,8 +112,8 @@ class TrainerDictionnary:
                 output, _, _ = self.model(noisy_image)
                 loss_val += self.criterion(output, image).cpu().item()/self.val_dataloader.__len__()
                 output = torch.clamp(output, 0., 1.)
-                psnr_val += utilities.batch_PSNR(output, image, 1.)/self.val_dataloader.__len__()
-                ssim_val += utilities.batch_SSIM(output, image, 1.)/self.val_dataloader.__len__()
+                psnr_val += batch_PSNR(output, image, 1.)/self.val_dataloader.__len__()
+                ssim_val += batch_SSIM(output, image, 1.)/self.val_dataloader.__len__()
         
 
         self.writer.add_image('my_image', output[0,0,...], self.total_eval_step, dataformats='HW')
