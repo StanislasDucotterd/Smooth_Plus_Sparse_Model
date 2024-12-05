@@ -24,7 +24,7 @@
         "lr_decay": 0.75,
         "lr_hyper": 0.001,
         "num_workers": 1,
-        "train_data_file": "/home/ducotter/nerf_dip/images/train.h5",
-        "val_data_file": "/home/ducotter/nerf_dip/images/val.h5"
+        "train_data_file": "path/to/train.h5",
+        "val_data_file": "path/to/val.h5"
     }
 }
