@@ -79,11 +79,14 @@ Super Resolution
 TV
 Lambda: 0.000310464
 
+DRUNet 
+sigma=36.9207 and lambda=0.17562521603732997
+
+Prox-DRUNet
+prediction was taken from https://arxiv.org/pdf/2406.12289
+
 CPR
 beta=0.0389756 and lambda=5.2556e-05
 
-WCPR
+NCPR
 beta=0.00258673 and lambda=0.000929068
-
-DRUNet 
-sigma=36.9207 and lambda=0.17562521603732997
