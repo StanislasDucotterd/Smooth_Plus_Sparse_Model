@@ -1,5 +1,5 @@
 # Learning of Patch-Based Smooth-Plus-Sparse Models for Image Reconstruction
-Implementation of experiments done in : https://arxiv.org/abs/2412.13070
+Implementation of experiments done in : https://openreview.net/forum?id=xJpLu0Dicu#discussion
 
 ![alt text](https://github.com/StanislasDucotterd/Smooth_Plus_Sparse_Model/blob/main/plot/decomposition.png?raw=true)
 
